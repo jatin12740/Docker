@@ -1,0 +1,48 @@
+Building a Docker Image:
+
+To build a Docker image from a Dockerfile, use the docker build command. Make sure to navigate to the directory containing your Dockerfile.
+docker build -t your_image_name:tag .
+
+Replace your_image_name with the desired name for your image and tag with a version or label. The dot at the end represents the build context (current directory).
+Running a Docker Container:
+
+To run a Docker container based on an image:
+docker run -d --name your_container_name -p host_port:container_port your_image_name:tag
+
+    -d: Run the container in the background (detached mode).
+    --name: Assign a name to the container.
+    -p: Map a port on the host to a port on the container.
+
+Replace your_container_name, host_port, container_port, your_image_name, and tag with your desired values.
+Viewing Running Containers:
+
+To view the list of running containers:
+docker ps
+
+To view all containers, including stopped ones:
+docker ps -a
+
+Stopping and Removing Containers:
+
+To stop a running container:
+docker stop your_container_name_or_id
+
+To remove a container:
+docker rm your_container_name_or_id
+
+Managing Docker Images:
+
+To list Docker images:
+docker images
+
+To remove a Docker image:
+docker rmi your_image_name:tag
+
+Other Useful Commands:
+
+To access the shell of a running container:
+
+docker exec -it your_container_name_or_id /bin/bash
+
+To view logs of a running container:
+docker logs your_container_name_or_id
